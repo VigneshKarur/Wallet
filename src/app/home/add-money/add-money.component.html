@@ -1,0 +1,84 @@
+<div style="border-style: solid;">
+    <div class="container">
+        <div class="row">
+          <div style="padding-top: 10%;"class="col-2">
+            Choose Payment Options
+          </div>
+          <div class="col-2">
+            <ul class="list-group">
+                <li class="list-group-item"><button class="btn btn-light"(click)="toggle()">Credit Card</button></li>
+                <li class="list-group-item"><button class="btn btn-light"(click)="toggle()">Debit Card</button></li>
+                <li class="list-group-item"><button class="btn btn-light"(click)="toggle()">NetBanking</button></li>
+                <li class="list-group-item"><button class="btn btn-light"(click)="toggle()">UPI</button></li>
+                <li class="list-group-item"><button class="btn btn-light"(click)="toggle()">Wallet</button></li>
+                <li class="list-group-item"><button class="btn btn-light"(click)="toggle()">EMI</button></li>
+              </ul>
+          </div>
+          <div class="col-8">
+            <div style="background-color: black;"><p style="color: white; text-align: right; padding-right: 5%;">Current Balance:{{balance}}</p></div>
+            <div *ngIf="!clicked">
+                <h3 style="border: 2px solid black; margin-top: 10%; font-size:1.5rem;">Successfully Added to you wallet Amount
+                  in your Account</h3>
+            </div>
+            <div *ngIf="clicked">
+            <div class="container">
+                <div class="row">
+                  <div class="col-6">
+                    <h4>Add amount</h4>
+                    <form #userform="ngForm">
+                      <br>
+                      <div class="form-group">
+                        <label >Add Amount</label>
+                        <input type="text" required [(ngModel)]="newAmount"#name="ngModel"
+                        [class.is-invalid]="name.invalid && name.touched"
+                        pattern="[0-9]+"
+                        class="form-control" 
+                        ngModel
+                        name="username">
+                        <div *ngIf="name.errors && (name.invalid && name.touched)">
+                             <small class="text-danger" *ngIf="name.errors.required">Please Enter the Amount</small>
+                             <small class="text-danger" *ngIf="name.errors.pattern">Only Numbers</small>
+                        </div> 
+                      </div>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required style="margin-left: 4%;">
+                     <label class="form-check-label" for="flexCheckDefault" style="margin-left: 9%;"> I accept blah blah</label><br><br>
+                     <button class="btn"style="background-color: red;color: white;" (click)="handleAddMoney()"[disabled]="!(name.valid)">Add Money</button>
+                    </form>
+                    </div>
+                    <div class="col-6">
+                        <div class="container">
+                            <div class="row">
+                              <div class="col-3"><input class="form-control" type="text" placeholder="4 Digit Num"></div>
+                              <div class="col-3"><input class="form-control" type="text" placeholder="4 Digit Num"></div>
+                              <div class="col-3"><input class="form-control" type="text" placeholder="4 Digit Num"></div>
+                              <div class="col-3"><input class="form-control" type="text" placeholder="4 Digit Num"></div>    
+                            </div><br>
+                        </div>
+                        <input class="form-control" type="text" placeholder="Acc holder Name"><br>
+                        <div class="container">
+                            <div class="row">
+                              <div class="col-6"><input class="form-control" type="text" placeholder="cvv"> </div>
+                              <div class="col-3"><input class="form-control" type="text" placeholder="Mon"> </div>
+                              <div class="col-3"> <input class="form-control" type="text" placeholder="year"></div>
+
+                            </div>
+                        </div><br><br><br><br><br>
+                        <div class="container">
+                            <div class="row">
+                              <div class="col-6">
+                                  <button class="btn btn-dark">Pay</button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-dark">Save&Pay</button>
+                          </div>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+       </div>
+          </div>
+        </div>
+      </div>
+</div>

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'oauth';
+  title = "Vignesh's Wallet";
   user: SocialUser;
   loggedIn: boolean;
   router: Router;

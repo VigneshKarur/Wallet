@@ -36,7 +36,7 @@ const routes: Routes = [
         {
           id: GoogleLoginProvider.PROVIDER_ID,
           provider: new GoogleLoginProvider(
-            '658537167633-svv36g8467b06b8jkr39jhvudeg1su3l.apps.googleusercontent.com'
+            '658537167633-16ds3rib5h87l4q8rnhg7kdejpq5s00v.apps.googleusercontent.com'
           )
         }
       ]
